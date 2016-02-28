@@ -2,7 +2,7 @@ users_by_id =  node['etc']['passwd'].map { |user| [ user[0], user[1]['uid'] ] }
 default_user =  users_by_id.find { |u| u[1] == 1000 }
 
 unless Chef::Config[:solo]
-  defined_users =  data_bag('users').map { |u| {:uid => data_bag_item('users', u)['uid'], :name => data_bag_item('users', u)['id']} } }
+  defined_users =  data_bag('users').map { |u| {:uid => data_bag_item('users', u)['uid'], :name => data_bag_item('users', u)['id']} }
 end
 
 if defined_users.nil? || defined_users.empty?
