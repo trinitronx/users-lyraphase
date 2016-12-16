@@ -10,4 +10,7 @@ depends 'users'
 depends 'ssh_known_hosts'
 
 # For use in vagrant and chef-solo, this is required. In chef-client, this cookbook is a no-op
-depends 'chef-solo-search'
+## Removing due to unsolved syntax bug with Chef 12
+# https://github.com/edelight/chef-solo-search/issues/16
+# Specify this dependency explicitly if needed in wrapper cookbook?
+#depends 'chef-solo-search'
